@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cash Game</title>
+    <style>
+        body {
+            margin: 0;
+            background: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        #cashDisplay {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2em;
+            background: rgba(0,0,0,0.7);
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 2px solid #fff;
+        }
+        #earnBtn {
+            position: absolute;
+            top: 80px;
+            left: 20px;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            background: #222;
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        #earnBtn:hover {
+            background: #444;
+        }
+    </style>
+</head>
+<body>
+    <div id="cashDisplay">Cash: $0</div>
+    <div id="ironOreDisplay">Iron Ore: 0</div>
+    <button id="mineIronBtn">Mine iron ore</button>
+    <script>
+        let cash = 0;
+        let ironOre = 0;
+        const cashDisplay = document.getElementById('cashDisplay');
+        const ironOreDisplay = document.getElementById('ironOreDisplay');
+        const mineIronBtn = document.getElementById('mineIronBtn');
+
+        mineIronBtn.addEventListener('click', () => {
+            ironOre += 1;
+            ironOreDisplay.textContent = `Iron Ore: ${ironOre}`;
+        });
+    </script>
+</body>
+</html>
