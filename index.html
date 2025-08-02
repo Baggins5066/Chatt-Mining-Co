@@ -23,19 +23,25 @@
             border: none;
         }
         #progressBar {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: 100px;
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100vw;
             display: flex;
             gap: 4px;
+            z-index: 10;
+            padding: 0 0 0 0;
+            background: none;
         }
         .progress-segment {
-            width: 30px;
-            height: 20px;
+            flex: 1 1 0;
+            min-width: 0;
+            height: 24px;
             background: #222;
             border: 1px solid #fff;
             border-radius: 4px;
+            margin: 0 2px;
         }
         .progress-filled {
             background: #4caf50;
