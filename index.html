@@ -87,20 +87,20 @@
 </head>
 <body>
     <div id="cashDisplay">
-        <span id="cashText" class="sellable">Cash: $0</span>
-        <span id="lumberText" class="sellable">Lumber: 0</span>
-        <span id="ironOreText" class="sellable">Iron Ore: 0</span>
+        <span id="cashText" class="sellable">💰 Cash: $0</span>
+        <span id="lumberText" class="sellable">🪵 Lumber: 0</span>
+        <span id="ironOreText" class="sellable">⛓️ Iron Ore: 0</span>
         <br>
-        <button id="unlockBtn" style="margin-top: 10px; font-size: 1em; padding: 8px 16px; background: #222; color: #fff; border: 2px solid #fff; border-radius: 8px; cursor: pointer; display: block;">Unlock Iron Ore Mining ($10)</button>
+        <button id="unlockBtn" style="margin-top: 10px; font-size: 1em; padding: 8px 16px; background: #222; color: #fff; border: 2px solid #fff; border-radius: 8px; cursor: pointer; display: block;">🔓 Unlock Iron Ore Mining ($10)</button>
     </div>
-    <button id="sellBtn">Sell</button>
+    <button id="sellBtn">💵 Sell</button>
     <div id="progressBar"></div>
     <div style="position: absolute; left: 50%; transform: translateX(-50%); bottom: 80px; display: flex; gap: 8px; align-items: center;">
         <select id="resourceSelect" style="font-size: 1em; padding: 6px 10px; border-radius: 6px;">
-            <option value="lumber">Lumber</option>
-            <option value="ironOre" disabled>Iron Ore</option>
+            <option value="lumber">🪵 Lumber</option>
+            <option value="ironOre" disabled>⛓️ Iron Ore</option>
         </select>
-        <button id="mineIronBtn">Mine</button>
+        <button id="mineIronBtn">⛏️ Mine</button>
     </div>
     <script>
         let cash = 0;
@@ -119,9 +119,9 @@
         const unlockBtn = document.getElementById('unlockBtn');
 
         function updateDisplay(enlargeCash = false, enlargeLumber = false, enlargeIron = false) {
-            cashText.textContent = `Cash: $${cash}`;
-            lumberText.textContent = `Lumber: ${lumber}`;
-            ironOreText.textContent = `Iron Ore: ${ironOre}`;
+            cashText.textContent = `💰 Cash: $${cash}`;
+            lumberText.textContent = `🪵 Lumber: ${lumber}`;
+            ironOreText.textContent = `⛓️ Iron Ore: ${ironOre}`;
         }
 
         function updateProgressBar() {
