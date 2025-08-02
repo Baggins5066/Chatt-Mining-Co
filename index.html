@@ -97,6 +97,7 @@
             <option value="ironOre" disabled>⛓️ Iron Ore</option>
         </select>
         <button id="mineIronBtn">⛏️ Mine</button>
+        <span id="plusIndicator" style="display:none; font-size: 1.2em; color: #4caf50; font-weight: bold; margin-left: 4px; transition: opacity 0.2s, transform 0.2s; opacity: 0; position: relative; top: 2px;">+#</span>
     </div>
     <script>
         let cash = 0;
@@ -136,6 +137,8 @@
             const add = Math.floor(Math.random() * 2) + 1; // 1 or 2
             progress += add;
             let resourceAdded = false;
+            // Show +# indicator
+            showPlusIndicator(add);
             if (progress >= 10) {
                 if (selected === 'lumber') {
                     lumber += 1;
@@ -150,6 +153,21 @@
             setTimeout(() => {
                 mineIronBtn.disabled = false;
             }, 500);
+        }
+        // Show +# indicator next to mine button
+        function showPlusIndicator(amount) {
+            const indicator = document.getElementById('plusIndicator');
+            indicator.textContent = `+${amount}`;
+            indicator.style.display = 'inline';
+            indicator.style.opacity = '1';
+            indicator.style.transform = 'translateY(-10px)';
+            setTimeout(() => {
+                indicator.style.opacity = '0';
+                indicator.style.transform = 'translateY(0)';
+            }, 350);
+            setTimeout(() => {
+                indicator.style.display = 'none';
+            }, 600);
         }
 
         mineIronBtn.addEventListener('click', mineResource);
