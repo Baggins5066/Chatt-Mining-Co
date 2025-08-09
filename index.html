@@ -85,9 +85,8 @@
     <div id="cashDisplay">
         <span id="cashText" class="sellable">💰 Cash: $0</span>
         <span id="lumberText" class="sellable">🪵 Lumber: 0</span>
-        <span id="ironOreText" class="sellable">⛓️ Iron Ore: 0</span>
-        <br>
-        <button id="unlockBtn" style="margin-top: 10px; font-size: 1em; padding: 8px 16px; background: #222; color: #fff; border: 2px solid #fff; border-radius: 8px; cursor: pointer; display: block;">🔓 Unlock Iron Ore Mining ($10)</button>
+        <span id="ironOreText" class="sellable" style="display: none;">⛓️ Iron Ore: 0</span>
+        <button id="unlockBtn" style="margin-left: 10px; font-size: 1em; padding: 8px 16px; background: #222; color: #fff; border: 2px solid #fff; border-radius: 8px; cursor: pointer; display: inline;">🔒 Iron Ore ($10)</button>
     </div>
     <button id="sellBtn">💵 Sell</button>
     <div id="progressBar"></div>
@@ -207,6 +206,9 @@
                 ironOreUnlocked = true;
                 // Enable iron ore in dropdown
                 resourceSelect.options[1].disabled = false;
+                // Hide unlock button and show iron ore counter
+                unlockBtn.style.display = 'none';
+                ironOreText.style.display = 'inline';
                 updateDisplay(true, false, false);
                 alert('Iron ore mining unlocked!');
             }
